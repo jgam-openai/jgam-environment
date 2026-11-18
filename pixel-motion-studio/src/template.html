@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Lark · Pixel Motion Studio</title>
+<style>/* STYLES */</style>
+</head>
+<body>
+<main>
+  <header class="mast">
+    <div class="wordmark"><span class="mark" aria-hidden="true">✦</span> Pixel Motion Studio</div>
+    <span class="edition">SPRITE STUDY <b>001</b></span>
+  </header>
+  <section class="intro" aria-labelledby="title">
+    <div>
+      <div class="eyebrow"><span></span> CHARACTER / 01</div>
+      <h1 id="title">Lark<span>.</span></h1>
+      <p>Waypost courier</p>
+    </div>
+    <div class="spec"><span>96 × 96 PX</span><span>80 MS / TICK</span></div>
+  </section>
+
+  <section class="studio" aria-label="Animation viewer">
+    <div class="toolbar">
+      <div class="actions" role="group" aria-label="Action">
+        <button data-action="idle" aria-pressed="true"><span>01</span> Idle</button>
+        <button data-action="run" aria-pressed="false"><span>02</span> Run</button>
+        <button data-action="jump" aria-pressed="false"><span>03</span> Jump</button>
+        <button data-action="attack" aria-pressed="false"><span>04</span> Attack</button>
+      </div>
+      <label class="toggle"><input type="checkbox" id="compare" aria-describedby="sync-help"> Compare</label>
+    </div>
+    <span id="sync-help" class="sr-only">Both actions use the same clock. The shorter action holds its final pose.</span>
+    <div id="panes" class="panes">
+      <figure>
+        <figcaption><span class="indicator"></span><b id="primary-name">Idle</b><span class="pane-meta" id="primary-meta"></span></figcaption>
+        <div class="stage" data-bg="dark" tabindex="0" role="region" aria-label="Primary animation canvas">
+          <canvas id="primary" width="96" height="96" role="img" aria-label="Lark, Idle"></canvas>
+        </div>
+      </figure>
+      <figure id="secondary-pane" hidden>
+        <figcaption><span class="indicator secondary"></span>
+          <select id="secondary-action" aria-label="Comparison action">
+            <option value="idle">Idle</option><option value="run" selected>Run</option>
+            <option value="jump">Jump</option><option value="attack">Attack</option>
+          </select>
+          <span class="pane-meta" id="secondary-meta"></span>
+        </figcaption>
+        <div class="stage" data-bg="dark" tabindex="0" role="region" aria-label="Comparison animation canvas">
+          <canvas id="secondary" width="96" height="96" role="img" aria-label="Lark, Run"></canvas>
+        </div>
+      </figure>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-head">
+        <label for="seek">TIMELINE <span id="sync-note" hidden>· SHARED CLOCK</span></label>
+        <output id="clock" for="seek" aria-live="off">0.00 s</output>
+      </div>
+      <input type="range" id="seek" min="0" max="1" step="1" value="0" aria-label="Timeline position">
+      <div class="timeline-foot"><span id="frame">FRAME 01 / 06</span><span id="length"></span></div>
+    </div>
+
+    <div class="controls">
+      <div class="transport" role="group" aria-label="Playback">
+        <button id="prev" aria-label="Previous frame" title="Previous frame (Left arrow)"><span aria-hidden="true">|◀</span></button>
+        <button id="play" aria-label="Pause" title="Play or pause (Space)">Pause</button>
+        <button id="next" aria-label="Next frame" title="Next frame (Right arrow)"><span aria-hidden="true">▶|</span></button>
+        <label class="toggle"><input type="checkbox" id="loop" checked> Loop</label>
+      </div>
+      <div class="settings">
+        <label>Speed <select id="speed">
+          <option value=".25">0.25×</option><option value=".5">0.5×</option>
+          <option value="1" selected>1×</option><option value="1.5">1.5×</option><option value="2">2×</option>
+        </select></label>
+        <label>Zoom <select id="zoom">
+          <option value="1">1×</option><option value="2" selected>2×</option><option value="4">4×</option>
+        </select></label>
+        <label>Backdrop <select id="background">
+          <option value="dark">Dark</option><option value="light">Light</option><option value="checker">Checker</option>
+        </select></label>
+        <label class="toggle"><input type="checkbox" id="guide"> Ground</label>
+      </div>
+    </div>
+    <p id="error" role="alert" hidden>The sprite assets could not be loaded.</p>
+  </section>
+  <footer><span>LARK / WAYPOST COURIER</span><span><kbd>Space</kbd> Play / pause <kbd>←</kbd> <kbd>→</kbd> Step</span></footer>
+</main>
+<script id="project-data" type="application/json">/* PROJECT */</script>
+<script>/* VIEWER */</script>
+</body>
+</html>
