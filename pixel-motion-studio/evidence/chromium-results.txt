@@ -1,0 +1,7 @@
+PASS assets: 34 distinct per-clip poses, four timings, alpha, dimensions, crops, bounds, anchors and contacts.
+chromium 156.0.8078.79 (loopback preview)
+PASS standalone viewer launch, visible Idle, autoplay, pause, integer canvas and smoothing.
+PASS four distinct Canvas renders, action labels, seek, frame count, buttons and keyboard shortcuts.
+PASS all five speed rates, one-shot end and explicit loop wrap.
+PASS zoom, all backdrops, ground, shared time, shorter clip final-pose hold and compare exit. Zero errors, failed requests or HTTP(S) requests.
+PASS reduced motion, visible keyboard focus, narrow comparison and keyboard scrolling of both 4× canvases without page overflow.
